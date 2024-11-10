@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# Check if the correct number of arguments is provided
+if [ "$#" -ne 1 ]; then
+    echo "Usage: $0 filename"
+    exit 1
+fi
+
+# Assign the argument to a variable
+filename="$1"
+
+# Check if the file exists
+if [ ! -f "$filename" ]; then
+    echo "File not found: $filename"
+    exit 1
+fi
+
+# Copy the file content to the clipboard using xclip
+xclip -selection clipboard < "$filename"
+
+# Check if the copy was successful
+if [ $? -eq 0 ]; then
+    echo "Content of $filename copied to clipboard"
+else
+    echo "Failed to copy content of $filename to clipboard"
+fi

@@ -1,0 +1,147 @@
+;==========================================================
+;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+;==========================================================
+
+[colors]
+background = #aa000000
+foreground = #C5C8C6
+alert = ${xrdb:color3:#222}
+green = #a0ec04
+yellow = #d79921
+blue = #2678fe
+red = #fb4934
+cyan = #06eec1
+black = #000000
+purple = #ca9ee6
+background-alt = #2e3440
+disabled = #a89984
+
+[bar/bar]
+width = 100%
+height = 25pt
+radius = 8
+bottom = false
+
+separator = |
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 3pt
+border-size = 5pt
+border-color = #00000000
+
+padding-left = 0
+padding-right = 1
+module-margin = 1
+
+font-0 = "JetBrainsMonNerd Font:size=12:file=/usr/share/fonts/nerd-fonts/JetBrainsMono/JetBrainsMonoNerdFont-Bold.ttf"
+
+modules-right = shot clipboard eth0 time powermenu
+modules-center = xworkspaces
+modules-left = menu cpu ctf xwindow
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+enable-ipc = true
+
+[module/powermenu]
+type = custom/text
+format = "     "
+formatf-background = ${colors.black}
+format-foreground = ${colors.red}
+click-left = ~/.config/rofi/power/powermenu.sh
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:60:...%
+label-foreground = ${colors.cyan}
+
+[module/time]
+type = internal/date
+interval = 1
+time = %I:%M %p
+label = %time%
+label-foreground = ${colors.yellow}
+format-prefix = "󱑒  "
+format-prefix-foreground = ${colors.red}
+
+[module/eth0]
+type = custom/script
+interval = 10
+exec = "ip addr show eth0 | grep 'inet ' | awk '{print $2}' | cut -d/ -f1"
+label = "󰈀  %output%"
+label-foreground = ${colors.blue}
+
+[module/menu]
+type = custom/script
+format-prefix = "    "
+format-prefix-foreground = ${colors.blue}
+interval = 60
+exec = "whoami"
+label = " %output%"
+;label-foreground = #FF0000
+click-left =rofi -show drun -theme '~/.config/rofi/app-launcher/launch.rasi'
+
+[module/clipboard]
+type = custom/text
+content = "󱉣  Clipboard"
+click-left = kitty -e "$SHELL" -c "i3-msg 'floating enable' && /usr/local/bin/clipse"
+content-foreground = ${colors.purple}
+
+[module/shot]
+type = custom/text
+content = " "
+content-foreground = ${colors.green}
+click-left = flameshot gui -p ~/Pictures/screenshots
+click-right = flameshot full -c
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+format-prefix = " "
+format-prefix-foreground = ${colors.yellow}
+label = %percentage:2%%
+label-foreground = ${colors.yellow}
+
+[module/ctf]
+type = custom/script
+interval = 10
+exec = ip link show tun0 > /dev/null 2>&1 && [ -f ~/target ] && echo "󰆧 $(cat ~/target)" || echo "󰆧 off"
+label-foreground = ${colors.green}
+
+[module/xworkspaces]
+type = internal/xworkspaces
+
+label-active = %name%
+label-active-background = ${colors.background-alt}
+label-active-underline= ${colors.yellow}
+label-active-padding = 1
+
+label-occupied = %name%
+label-occupied-padding = 1
+label-occupied-foreground = ${colors.blue}
+
+label-urgent = %name%
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 1
+
+label-empty = %name%
+label-empty-foreground = ${colors.disabled}
+label-empty-padding = 1
+
+[module/tray]
+type = internal/tray
+tray-position = right
+tray-padding = 5
+
+[settings]
+screenchange-reload = true
+pseudo-transparency = true
+
+; vim:ft=dosini
