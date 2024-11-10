@@ -46,12 +46,14 @@
 </table>
 
 ## `🎥` Video
-![gif](Assets/KaliGhost.gif)
+https://github.com/user-attachments/assets/2f486eba-1b68-430f-bc3b-7da8c8198487
 
+---
 
 ## `📸` Screenshots
 
-![DMenu](Assets/DMenu.png)
+![App](Assets/app-menu.png)
+![clipboard](Assets/clipboard.png)
 ![PMenu](Assets/PowerMenu.png)
 ![full](Assets/full.png)
 
