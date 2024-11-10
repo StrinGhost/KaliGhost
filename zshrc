@@ -55,6 +55,16 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls $realpath'
 
 # Aliases
+alias msf="msfconsole"
+alias sploit="searchsploit"
+alias decode="base64 -d"
+alias jawn="john --wordlist=~/nest/passwords/rockyou.txt"
+alias pgvpn="sudo openvpn ~/practice/proving_grounds/pg.ovpn"
+alias repoly="killall polybar && sh ~/polybar-collection/launch.sh"
+alias ferox="feroxbuster -x php pem pam html js css bak xxx old zip txt -o feroxbuster.log --url"
+alias neektoe="nikto -host"
+alias kerbrute="/opt/kerbrute/kerbrute_linux_amd64"
+alias autorec="autorecon --exclude-tags dirbuster,feroxbuster,dirsearch,ffuf,dirb -v --heartbeat 10"
 alias vim='nvim'
 alias c='clear'
 alias ll='ls -la'
