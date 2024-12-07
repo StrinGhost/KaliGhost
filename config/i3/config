@@ -1,0 +1,200 @@
+######################################################
+#  ____ ____ ____                                    #
+#    ╭━━━┳━━━╮  StrinGhost                           #
+#    ┃╭━╮┃╭━╮┃                                       #
+#    ┃╰━━┫┃╱╰╯  https://www.github.com/StrinGhost    #
+#    ╰━━╮┃┃╭━╮  https://www.reddit.com/u/StrinGhost  #
+#    ┃╰━╯┃╰┻━┃  https://x.com/StrinGhost             #
+#    ╰━━━┻━━━╯                                       #
+######################################################
+# i3 Configuration File
+
+# Set modifier keys
+set $mod Mod1
+# Mod1 = ALT
+# Mod4 = WIN
+
+# Font for window titles. Will also be used by the bar unless a different font
+font pango:JetBrainsMono NFM SemiBold 10
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# Start polybar
+exec ~/.config/polybar/launch.sh
+
+# Start picom
+exec --no-startup-id picom
+
+# Start a terminal
+bindsym $mod+Return exec kitty
+
+# Start Firefox
+bindsym $mod+f exec firefox
+
+# Start Zen Browser 
+#bindsym $mod+b exec --no-startup-id  /usr/local/bin/zen
+
+#Rofi clipboard
+bindsym Mod4+v exec --no-startup-id "~/.config/rofi/clipboard/launch.sh"
+
+# rofi App Menu
+bindsym $mod+space exec  --no-startup-id "~/.config/rofi/app-launcher/launch.sh"
+
+# Shutdown
+bindsym $mod+Escape exec --no-startup-id "~/.config/rofi/power/powermenu.sh"
+
+# Lock screen
+bindsym $mod+z exec betterlockscreen -l
+
+# start Obsidian 
+bindsym $mod+o exec obsidian --no-sandbox
+
+# Kill focused window
+bindsym $mod+q kill
+
+
+# Change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# Alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# Move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# Alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# feh - change wallpaper
+bindsym $mod+i exec --no-startup-id sh ~/.chbg
+bindsym Mod4+i exec --no-startup-id sh ~/.chbg
+
+# Split in horizontal orientation
+#bindsym $mod+h split h
+
+# Split in vertical orientation
+bindsym $mod+Shift+y split v
+
+# Enter fullscreen mode for the focused container
+bindsym $mod+Shift+f fullscreen toggle
+
+# Change container layout (stacked, tabbed, toggle split)
+bindsym $mod+Shift+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# Toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# Change focus between tiling / floating windows
+bindsym $mod+d focus mode_toggle
+
+# Focus the parent container
+bindsym $mod+a focus parent
+
+# Switch to workspace
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
+
+# Move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+0 move container to workspace 10
+
+# Reload the configuration file
+bindsym $mod+Shift+c reload
+
+# Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r exec "killall -USR1 termite"; restart;
+
+# Exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# Resize window (you can also use the mouse for that)
+mode "resize" {
+    # These bindings trigger as soon as you enter the resize mode
+    bindsym h resize shrink width 10 px or 10 ppt
+    bindsym j resize grow height 10 px or 10 ppt
+    bindsym k resize shrink height 10 px or 10 ppt
+    bindsym l resize grow width 10 px or 10 ppt
+
+    # Same bindings, but for the arrow keys
+    bindsym Left resize shrink width 10 px or 10 ppt
+    bindsym Down resize grow height 10 px or 10 ppt
+    bindsym Up resize shrink height 10 px or 10 ppt
+    bindsym Right resize grow width 10 px or 10 ppt
+
+    # Back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+# Set window border
+for_window [class="^.*"] border pixel 3
+
+# set size of floating window
+for_window [floating] resize set 640 480
+
+## tiling exceptions
+for_window [class=obsidian] border pixel 4
+
+#                       border     background   text       indicator
+client.focused           #ca9ee6 #ca9ee6 #1e1e2e  #ca9ee6 #ca9ee6
+client.focused_inactive  #6c7086 #1e1e2e #cdd6f4  #ca9ee6 #6c7086
+client.unfocused         #6c7086 #1e1e2e #cdd6f4  #ca9ee6 #6c7086
+client.urgent            #ca9ee6    #1e1e2e #ca9ee6 #6c7086  #ca9ee6
+client.placeholder       #6c7086 #1e1e2e #cdd6f4  #6c7086  #6c7086
+
+# i3-gaps
+
+gaps inner 10
+gaps outer 5
+
+hide_edge_borders smart_no_gaps
+default_border normal
+
+# feh - Wallpaper Setter
+exec_always --no-startup-id sh ~/.chbg
+
+# Clipse autostart listening
+exec --no-startup-id "greenclip daemon"
+
+# compton - Compositing Manager for Shadows and Opacity
+#exec_always --no-startup-id compton -b --config ~/.config/compton/compton.conf
+
+# Caps to Escape
+exec --no-startup-id ~/.config/i3/caps2esc.sh
+
+# Screenshot
+bindsym $mod+P exec flameshot gui
+bindsym Print exec flameshot full -p ~/Pictures/screenshots

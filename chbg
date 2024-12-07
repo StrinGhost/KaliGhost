@@ -1,0 +1,10 @@
+#!/bin/sh
+# feh --randomize --no-fehbg --bg-fill ~/.images/*
+
+TEMP="$HOME/.images/tmp/current_wallpaper"
+IMG=$(find "$HOME/.images" -type f | shuf -n 1)
+
+if [ -n "$IMG" ]; then
+    cp "$IMG" "$TEMP"
+    feh --bg-scale "$IMG"
+fi
