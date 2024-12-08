@@ -88,14 +88,6 @@ After Rebooting, in Login Menu select `i3` from the drop-down list and log in.
         <td><a href=config/tmux>ReadMe</a></td>
     </tr>
     <tr>
-        <td><b>Kitty</b></td>
-        <td><a href=config/kitty>ReadMe</a></td>
-    </tr>
-    <tr>
-        <td><b>Picom</b></td>
-        <td><a href=config/picom>ReadMe</a>
-        </td>
-    <tr>
         <td><b>WallPapers</b></td>
         <td><a href=https://github.com/StrinGhost/WallPaper-Collection>ReadMe</a></td>
     </tr>
