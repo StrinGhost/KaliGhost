@@ -1,19 +1,24 @@
-######################################################
-#  ____ ____ ____                                    #
-#    ╭━━━┳━━━╮  StrinGhost                           #
-#    ┃╭━╮┃╭━╮┃                                       #
-#    ┃╰━━┫┃╱╰╯  https://www.github.com/StrinGhost    #
-#    ╰━━╮┃┃╭━╮  https://www.reddit.com/u/StrinGhost  #
-#    ┃╰━╯┃╰┻━┃  https://x.com/StrinGhost             #
-#    ╰━━━┻━━━╯                                       #
-######################################################
+//######################################################
+//#  ____ ____ ____                                    #
+//#    ╭━━━┳━━━╮  StrinGhost                           #
+//#    ┃╭━╮┃╭━╮┃                                       #
+//#    ┃╰━━┫┃╱╰╯  https://www.github.com/StrinGhost    #
+//#    ╰━━╮┃┃╭━╮  https://www.reddit.com/u/StrinGhost  #
+//#    ┃╰━╯┃╰┻━┃  https://x.com/StrinGhost             #
+//#    ╰━━━┻━━━╯                                       #
+//######################################################
 
 {
     "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
     "logo": {
-        "source": "$HOME/.config/fastfetch/png/mono8.png",
-        "type": "auto",
-        "height": 18
+        "source": "$HOME/.config/fastfetch/png/ghost.png",
+        "type": "kitty-direct",
+        "height": 18,
+        "width": 28,
+        "padding": {
+            "top": 2,
+            "left": 3
+        }
     },
     "modules": [
         "break",
