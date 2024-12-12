@@ -62,6 +62,9 @@ Clone the repo `git clone https://github.com/StrinGhost/KaliGhost.git && cd Kali
 
 Simply `chmod +x install.sh` the installation script if it isn't already marked as executable and then just run it with `./install.sh`. 
 
+>[!Note]
+**A pre-build binary of Picom latest version is used during the installation. If you dont want to use the pre-build binary. Run the `install.sh` script with --no-picom flag. **
+
 #### **One Command Setup for Lazy Sloths🦥**
 ```bash
 git clone https://github.com/StrinGhost/KaliGhost.git && cd KaliGhost && ./install.sh

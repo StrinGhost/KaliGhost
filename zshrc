@@ -65,6 +65,9 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls $realpath'
 
 # Aliases
+alias ls="eza"
+alias cat="bat"
+
 alias msf="msfconsole"
 alias sploit="searchsploit"
 alias ferox="feroxbuster -x php pem pam html js css bak xxx old zip txt -o feroxbuster.log --url"
