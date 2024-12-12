@@ -73,7 +73,9 @@ git clone https://github.com/StrinGhost/KaliGhost.git && cd KaliGhost && ./insta
 After successfully installing everything, make sure you reboot your system.
 After Rebooting, in Login Menu select `i3` from the drop-down list and log in.
 
-![i3wm](Assets/i3wm.png)
+<div align="center">
+    <img src="Assets/i3wm.png" alt="i3wm" width=200/> 
+</div>
 
 
 ## `⌨️` KeyBindings
