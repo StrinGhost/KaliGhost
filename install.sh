@@ -24,9 +24,10 @@ fi
 
 # Check if running as root. If root, script will exit
 if [[ $EUID -eq 0 ]]; then
-    echo "${ERROR}" "This script should not be executed as root! Exiting.......${RESET}"
+    echo "${ERROR} This script should not be executed as root! Exiting.......${RESET}"
     exit 1
-read -r 
+fi
+read -r -p "Pressione Enter para continuar..."
 
 clear
 
