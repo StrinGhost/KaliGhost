@@ -62,9 +62,6 @@ Clone the repo `git clone https://github.com/StrinGhost/KaliGhost.git && cd Kali
 
 Simply `chmod +x install.sh` the installation script if it isn't already marked as executable and then just run it with `./install.sh`. 
 
->[!Note]
-**A pre-build binary of Picom latest version is used during the installation. If you dont want to use the pre-build binary. Run the `install.sh` script with --no-picom flag. **
-
 #### **One Command Setup for Lazy Sloths🦥**
 ```bash
 git clone https://github.com/StrinGhost/KaliGhost.git && cd KaliGhost && ./install.sh
@@ -103,4 +100,3 @@ Feel free to modfiy any configuration as you like these configurations suites me
 
 ## `❓` Why
 I created it to simplify the process of setting up a customized Kali Linux environment. As a pentester, I've often found myself spending hours configuring and installing various tools and configurations from scratch. This script aims to automate that process, making it easy for users to get started with a fully functional and customized Kali Linux environment.
-

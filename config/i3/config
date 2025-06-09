@@ -42,7 +42,7 @@ bindsym Mod4+v exec --no-startup-id "~/.config/rofi/clipboard/launch.sh"
 bindsym $mod+space exec  --no-startup-id "~/.config/rofi/app-launcher/launch.sh"
 
 # Shutdown
-bindsym $mod+Escape exec --no-startup-id "~/.config/rofi/power/powermenu.sh"
+bindsym $mod+Escape exec --no-startup-id "~/.config/rofi/power/launch.sh"
 
 # Lock screen
 bindsym $mod+z exec betterlockscreen -l
